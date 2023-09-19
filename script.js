@@ -1,20 +1,34 @@
-const hour = document.querySelector('#clock-div #hour')
-const year = document.querySelector('#clock-div #year')
-const date = document.querySelector('#clock-div #date')
+function timeCount() {
+    var today = new Date();
 
-const userName = document.querySelector('.usr-input')
+    var day = today.getDate();
+    var month = today.getMonth()+1;
+    var year = today.getFullYear();
 
-let newHour = new Date()
-let newYear = new Date()
-let newDate = new Date()
+    var hour = today.getHours();
+    if(hour<10)hour = "0"+hour;
 
-let hourNow = newHour.toLocaleTimeString()
-let yearNow = newHour.getFullYear()
-let nowDate = newHour.toDateString()
+    var minute = today.getMinutes();
+    if(minute<10)minute = "0"+minute;
+
+    var second = today.getSeconds();
+    if(second<10)second = "0"+second;
+
+    document.querySelector("#clock-div #hour").innerHTML = hour+":"+minute+":"+second
+    document.querySelector('.hello-h2').innerHTML = day+"/"+month+"/"+year
+
+    setTimeout("timeCount()", 1000);
+}
+
+const userName = document.querySelector(".user-name input");
+const userContainer = document.querySelector(".user-name");
+const submit = document.querySelector(".user-name .submit");
+const namePlace = document.querySelector(".hello-h2");
 
 
-hour.innerHTML = hourNow
-year.innerHTML = yearNow
-date.innerHTML = nowDate
-
-userName.innerHTML = "lucas"
+submit.addEventListener("click", () => {
+  if (userName != "") {
+    userContainer.style.display = "none";
+    namePlace.innerHTML = userName.value;
+  }
+});

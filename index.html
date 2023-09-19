@@ -15,16 +15,25 @@
     <title>Landing Page</title>
 </head>
 
-<body>
+<body >
     <div id="container">
         <div class="user-name">
-            <input type="text" name="" id="" class="usr-input">
-            <h1></h1>
+            <input type="text" placeholder="What is your name" name="" id="" class="usr-input">
+            <input type="submit" name="" id="" value="submit" class="submit">
+            <h1 ></h1>
         </div>
         <div id="clock-div">
-            <h1 id="hour"></h1>
-            <h2 id="year"></h2>
-            <h2 id="date"></h2>
+            <h1 id="hour" onload="timeCount()" ></h1>
+            <div class="hello-user">
+                <div class="hello-container">
+                    <h2 class="hello">Hello</h2>
+                    <h2 class="hello-h2"></h2>
+                    <h2 class="hello">today is</h2>
+                    <h2 id="date" onload="timeCount()"></h2>
+                </div>
+
+
+            </div>
         </div>
     </div>
     <script src="./script.js"></script>
