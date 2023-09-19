@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+html{
+    background-color: #8CA1B2;
+}
+
+#container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#clock-div{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 400px;
+    margin-top: 10vh;
+    align-items: center;
+}
